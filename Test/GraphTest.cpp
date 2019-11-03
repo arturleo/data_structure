@@ -1,5 +1,8 @@
 #include"../Graph/Dijkstra.h"
 #include"../Graph/Graph.h"
+#include"../Graph/DisjointSet.h"
+#include"../Graph/Kruskal.h"
+#include"../Graph/Fleury.h"
 #include<vector>
 using namespace ds;
 template<class T> using vector = std::vector<T>;
@@ -35,5 +38,16 @@ int main()
 
 	Dijkstra dij = Dijkstra(g);
 	dij.run(5, 0, -1, 1);
+
+	Kruskal ksk = Kruskal(g);
+	ksk.run();
+
+	g.neighbourLists.at(0).push_back(std::pair<int,int>(5, 1));
+	g.neighbourLists.at(2).push_back(std::pair<int,int>(1, 1));
+	g.neighbourLists.at(2).push_back(std::pair<int,int>(5, 1));
+	g.neighbourLists.at(3).push_back(std::pair<int,int>(5, 1));
+	g.neighbourLists.at(3).push_back(std::pair<int,int>(1, 1));
+	Fleury flr = Fleury(g);
+	flr.run();
 	return 0;
 }

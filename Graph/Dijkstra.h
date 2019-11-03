@@ -7,11 +7,11 @@
 # include<sstream>
 #include<vector>
 
-#define MAX 10000;
-template<class T> using vector = std::vector<T>;
-using vpi = std::vector<std::pair<int, int>>;
 namespace ds
 {
+	#define MAX 10000
+	template<class T> using vector = std::vector<T>;
+	using vpi = std::vector<std::pair<int, int>>;
 	//for sparce graph
 	//Lose Kopplung
 	class Dijkstra
@@ -146,5 +146,6 @@ namespace ds
 		std::cout << st;
 		return dis;
 	}
+#undef MAX
 }
 

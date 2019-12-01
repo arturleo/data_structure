@@ -1,15 +1,15 @@
-# pragma once
-# include"Graph.h"
-# include"../Heap/Heap.h"
-# include"../Linkedlist/DoublyLinkedList.h"
+#pragma once
+#include"Graph.h"
+#include"../Heap/Heap.h"
+#include"../Linkedlist/DoublyLinkedList.h"
 
-# include<iostream>
-# include<sstream>
+#include<iostream>
+#include<sstream>
 #include<vector>
 
 namespace ds
 {
-	#define MAX 10000
+	//define MAX 10000
 	template<class T> using vector = std::vector<T>;
 	using vpi = std::vector<std::pair<int, int>>;
 	//for sparce graph
@@ -18,6 +18,7 @@ namespace ds
 	{
 	private:
 		Graph g;
+		const int MAX = 10000;
 
 	public:
 		Dijkstra(Graph gr) :g(gr) {};

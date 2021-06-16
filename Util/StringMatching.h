@@ -15,7 +15,6 @@ namespace ds
 			if (P[k + 1] == P[i])
 				k++;
 			prefix[i] = k;
-			prefix[i] = k;
 		}
 	}
 
@@ -26,13 +25,13 @@ namespace ds
 		int prefix[m];
 		compute_prefix(P, prefix);
 		int k = -1;
-		for (int i = 1; i < n; i++)
+		for (int i = 0; i < n; i++)
 		{
 			while (k > -1 && P[k + 1] != T[i])
 				k = prefix[k];
 			if (P[k + 1] == T[i])
 				k++;
-			if (k == m - 2)
+			if (k == m - 1)
 			{
 				ss << i - k << " ";
 				k = prefix[k];
